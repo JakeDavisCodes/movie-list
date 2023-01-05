@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const Search = (props) => {
+const AddMovie = (props) => {
 
   // const [search, setSearch] = React.useState('title')
 
   return (
-    <form onSubmit={(e) => props.searchFunc(e)} onChange={(e) => props.setSearch(e.target.value)}>
-      <label>Enter a title:
+    <form onSubmit={(e) => props.addMovie(e)} onChange={(e) => props.setTitle(e.target.value)}>
+      <label>Enter a movie:
         <input className="field" type="text"/>
       </label>
       <input className="button" type="submit" />
@@ -17,4 +17,4 @@ const Search = (props) => {
 
 
 
-export default Search;
+export default AddMovie;

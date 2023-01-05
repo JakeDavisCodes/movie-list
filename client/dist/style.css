@@ -5,6 +5,19 @@ body {
 .movie {
   margin: 10px;
   background-color: gainsboro;
-  width: 100px;
+  width: 700px;
   font-size: 50px;
+}
+
+.field {
+  background-color: beige;
+  height: 30px;
+  width: 400px;
+  border-radius: 0px;
+  margin: 10px;
+  margin-right: 0px;
+}
+
+.button {
+  height: 36px;
 }

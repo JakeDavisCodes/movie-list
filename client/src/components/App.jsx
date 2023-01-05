@@ -1,10 +1,12 @@
 import React from 'react';
 import MovieList from './MovieList.jsx'
 import Search from './Search.jsx'
+import AddMovie from './AddMovie.jsx'
+
 const { useState, useEffect } = React;
 const App = (props) => {
 
-  const allMovies = [
+  var initMovies = [
     {title: 'Mean Girls'},
     {title: 'Hackers'},
     {title: 'The Grey'},
@@ -12,23 +14,28 @@ const App = (props) => {
     {title: 'Ex Machina'},
   ]
 
+  const [allMovies, setAllMovies] = useState(initMovies)
   const [movies, setMovies] = useState(allMovies);
   const [search, setSearch] = useState('');
+  const [title, setTitle] = useState('');
+
+  const addMovie = (e) => {
+    e.preventDefault();
+    setAllMovies([...allMovies, {title: title}]);
+    setMovies([...allMovies, {title: title}]);
+  }
 
   const searchFunc = (e) => {
-  e.preventDefault();
-    console.log(search);
-    console.log('SEARCHING')
+    e.preventDefault();
     var terms = search.split(' ');
     var matching = [];
-    for(let i = 0; i < movies.length; i++) {
+    for(let i = 0; i < allMovies.length; i++) {
       for(let j = 0; j < terms.length; j++) {
-        if(movies[i].title.includes(terms[j])) {
-          matching.push(movies[i])
+        if(allMovies[i].title.includes(terms[j])) {
+          matching.push(allMovies[i])
         }
       }
     }
-    console.log(matching);
     setMovies(matching);
     // debugger;
   }
@@ -36,6 +43,9 @@ const App = (props) => {
 
   return (
     <div>
+      <div>
+        <AddMovie addMovie = {addMovie} setTitle = {setTitle}/>
+      </div>
       <div>
         <Search searchFunc = {searchFunc} setSearch = {setSearch} search = {search}/>
       </div>
