@@ -2,8 +2,19 @@ body {
   font-family: sans-serif, arial;
 }
 
-.movie {
+#app {
+  background-color: antiquewhite;
+}
+
+#movielist {
+  background-color: bisque;
+  padding: 10px;
+}
+
+.movieTitle {
   margin: 10px;
+  padding: 5px;
+  border-radius: 20px;
   background-color: gainsboro;
   width: 700px;
   font-size: 50px;

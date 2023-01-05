@@ -6,7 +6,7 @@ const MovieList = (props) => {
 
   return (
     <div className="list">
-      {props.movies.map(movie => <Movie title={movie.title} />)}
+      {props.movies.map(movie => <Movie movie={movie} setWatched={props.setWatched}/>)}
     </div>
   )
 }
