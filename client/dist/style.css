@@ -1,3 +1,10 @@
 body {
   font-family: sans-serif, arial;
 }
+
+.movie {
+  margin: 10px;
+  background-color: gainsboro;
+  width: 100px;
+  font-size: 50px;
+}
