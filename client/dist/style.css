@@ -18,6 +18,7 @@ body {
   background-color: gainsboro;
   width: 700px;
   font-size: 50px;
+  display: inline-block;
 }
 
 .field {
@@ -31,4 +32,16 @@ body {
 
 .button {
   height: 36px;
+}
+
+#watchedButton {
+  height: 60px;
+  width: 175px;
+  font-size: 30px;
+  display: inline-block;
+}
+
+.movie {
+  background-color: tan;
+  display: block;
 }

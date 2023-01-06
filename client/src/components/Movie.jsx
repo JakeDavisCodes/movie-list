@@ -3,16 +3,22 @@ import React from 'react';
 
 const Movie = (props) => {
 
-
+  const stringy = () => {
+    if(props.movie.watched) {
+      return 'Watched!';
+    } else {
+      return 'Unwatched!';
+    }
+  }
 
   return (
-    <div className = "movie" onClick={() => {console.log(1), props.setWatched(props.movie.title)}}>
+    <div className = "movie">
       <h1 className = "movieTitle">
         {props.movie.title}
       </h1>
-      <h1>
-        watched: {JSON.stringify(props.movie.watched)}
-      </h1>
+      <button id="watchedButton" onClick={() => {props.setWatched(props.movie.title)}}>
+        {stringy()}
+      </button>
     </div>
   )
 }

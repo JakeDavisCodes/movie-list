@@ -40,7 +40,7 @@ const App = (props) => {
   }
 
   const setWatched = (title) => {
-    debugger;
+    // debugger;
     let editedAll = [];
     let editedCurr = [];
 
