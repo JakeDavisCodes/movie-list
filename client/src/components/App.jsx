@@ -4,6 +4,7 @@ import Search from './Search.jsx'
 import AddMovie from './AddMovie.jsx'
 const axios = require('axios');
 
+
 const { useState, useEffect } = React;
 const App = (props) => {
 
@@ -14,10 +15,20 @@ const App = (props) => {
   const [search, setSearch] = useState('');
   const [title, setTitle] = useState('');
 
-  axios.get('http://localhost:3000/api/movies')
-  .then(movies => {
-    console.log(movies);
-  })
+  useEffect(() => {
+    axios.get('/api/movies')
+    .then((movies) => {
+      movies = movies.data;
+      for(let i = 0; i < movies.length; i++) {
+        movies[i].watched = false;
+      }
+      setAllMovies(movies);
+      setMovies(movies);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+  }, [])
 
   const showWatched = (e) => {
     let watched = [];

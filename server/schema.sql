@@ -1,4 +1,4 @@
-
+CREATE movieList;
 
 USE movieList;
 
@@ -16,7 +16,7 @@ INSERT INTO movies (title) VALUES ('Mean Girls');
 INSERT INTO movies (title) VALUES ('Hackers');
 INSERT INTO movies (title) VALUES ('The Grey');
 INSERT INTO movies (title) VALUES ('Sunshine');
-INSERT INTO movies (title) VALUES ('Ex Machina');
+INSERT INTO movies (title) VALUES ('Enders Game');
 
 /*  Execute this file from the command line by typing:
  *    mysql -u root < server/schema.sql
