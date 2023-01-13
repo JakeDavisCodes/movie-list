@@ -2,22 +2,22 @@ import React from 'react';
 import MovieList from './MovieList.jsx'
 import Search from './Search.jsx'
 import AddMovie from './AddMovie.jsx'
+const axios = require('axios');
 
 const { useState, useEffect } = React;
 const App = (props) => {
 
-  var initMovies = [
-    {title: 'Mean Girls', watched: false},
-    {title: 'Hackers', watched: false},
-    {title: 'The Grey', watched: false},
-    {title: 'Sunshine', watched: false},
-    {title: 'Ex Machina', watched: false},
-  ]
+  var initMovies = [];
 
   const [allMovies, setAllMovies] = useState(initMovies)
   const [movies, setMovies] = useState(allMovies);
   const [search, setSearch] = useState('');
   const [title, setTitle] = useState('');
+
+  axios.get('http://localhost:3000/api/movies')
+  .then(movies => {
+    console.log(movies);
+  })
 
   const showWatched = (e) => {
     let watched = [];
